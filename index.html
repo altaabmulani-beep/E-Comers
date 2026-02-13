@@ -5,7 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuxeMall | Premium Shopping</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind is now handled via Webpack/PostCSS in a local workflow, but we keep the CDN for the current platform's immediate rendering -->
+    
+    <script>
+      // Syncing the CDN config with our new tailwind.config.js for consistent aesthetics during transition
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              beige: {
+                50: '#fcfaf7',
+                100: '#f7f2eb',
+                200: '#ede4d5',
+                300: '#dfd1ba',
+                400: '#cbba9a',
+                800: '#6b5a3e',
+                900: '#4a3f2c',
+              },
+              charcoal: {
+                800: '#2d2d2d',
+                900: '#1a1a1a',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -47,6 +76,11 @@
         .animate-fade-in-up {
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
+        
+        @keyframes slow-zoom {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
     </style>
 <script type="importmap">
 {
@@ -58,8 +92,10 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>

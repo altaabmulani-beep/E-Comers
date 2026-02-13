@@ -13,6 +13,7 @@ import CartDrawer from './components/CartDrawer';
 import BespokeStudio from './components/BespokeStudio';
 import AffiliateProgram from './components/AffiliateProgram';
 import MobileBottomNav from './components/MobileBottomNav';
+import EliteConcierge from './components/EliteConcierge';
 
 const App: React.FC = () => {
   return (
@@ -45,6 +46,7 @@ const App: React.FC = () => {
         {/* Overlays & Mobile Nav */}
         <CartDrawer />
         <MobileBottomNav />
+        <EliteConcierge />
       </div>
     </ShopProvider>
   );
